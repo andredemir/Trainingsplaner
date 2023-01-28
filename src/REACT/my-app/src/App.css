@@ -1,0 +1,586 @@
+@import url('https://fonts.googleapis.com/css2?family=Asap:wght@500;600&display=swap');
+body{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+#root{
+  width: 100%;
+}
+h1, h2{
+  font-family: Arial, serif;
+}
+#fileDisplayArea img{
+  width: 80%;
+}
+#basketSection{
+  display: flex;
+  width: 80%;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: space-between;
+}
+/* DROPDOWN start */
+#billClassSection{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#warenkorbProducts img{
+  width: 100%;
+}
+#rechnungSection{
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+#billSection{
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 20px;
+  margin: 20px;
+  background-color: #f1f1f1;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+/* Dropdown Content (Hidden by Default) */
+#dropdown-content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 30px;
+  background-color: #f1f1f1;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* DROPDOWN END */
+
+#blab{
+  width: 100%;
+}
+#warenkorbProducts{
+  width: 25%;
+}
+.App {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#header{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+#subsection{
+  display: flex;
+  width: 25%;
+  justify-content: space-between;
+}
+
+#erstellAnzeigeButton{
+  width: 30%;
+  height: 20%;
+  border: none;
+  margin-top: 30px;
+  padding: 15px;
+  background-color: #8CCCC1;
+}
+
+#erstellAnzeigeButton a{
+  text-decoration: none;
+  color: white;
+}
+#logoImg{
+  width: 80%;
+}
+
+#menu{
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding-top: 30px;
+  padding-right: 20px;
+  width: 50%;
+  background-color: white;
+}
+
+#menu nav ul li{
+  list-style-type: none;
+  text-align: right;
+  padding: 10px;
+}
+
+#menu nav ul li a{
+  text-decoration: none;
+  color: black;
+  font-family: Arial, serif;
+  font-size: 16px;
+}
+#menuButton{
+  width: 20%;
+  padding: 0;
+  margin: 0 0 75px 0;
+  background: none;
+  border: none;
+}
+
+#userImg{
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+#userBox{
+  width: 30%;
+}
+nav{
+  display: none;
+}
+#profilProductSection{
+  width: 100%;
+  margin: 20px 0 20px 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+#profilSection{
+  display: flex;
+  width: 80%;
+  align-items: center;
+  flex-direction: column;
+}
+#userProfilBox{
+  flex-direction: column;
+  width: 100%;
+  display: flex;
+}
+#deleteButton{
+  width: 40%;
+  background-color: #D46C6C;
+  color: white;
+  border: none;
+}
+
+#deleteButton2{
+  width: 100%;
+  padding: 10px;
+  background-color: #D46C6C;
+  color: white;
+  border: none;
+}
+
+#pauseButton{
+  width: 40%;
+  padding: 15px 0 15px 0;
+  background-color: #8CCCC1;
+  color: white;
+  border: none;
+}
+
+#pauseButton a{
+  color: white;
+  text-decoration: none;
+}
+
+#searchButton{
+  width: 35%;
+  border: none;
+  padding: 15px;
+  color: white;
+  background-color: #8CCCC1;
+}
+#productButtonSection{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+#searchInput{
+  width: 95%;
+  border: none;
+  padding: 15px;
+}
+#selectionSectionHome{
+  display: flex;
+  flex-direction: column;
+}
+#selectionSectionHome select{
+  margin: 10px;
+}
+#searchContainer{
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  width: 25%;
+  margin: 20px;
+  border: solid black 1px;
+}
+
+#searchIcon{
+  width: 5%;
+  height: 5%;
+  margin: 10px;
+}
+
+.content{
+  display: flex;
+  width: 100%;
+  align-items: center;
+  flex-direction: column;
+
+}
+#content{
+   display: flex;
+   width: 100%;
+   align-items: center;
+   flex-direction: column;
+
+ }
+#toProductButton{
+  width: 50%;
+  border: none;
+  padding: 15px;
+  color: white;
+  background-color: #8CCCC1;
+}
+#registerButton{
+  width: 50%;
+  border: none;
+  padding: 15px;
+  color: white;
+  background-color: #ffffff;
+  border: solid #878787 1px;
+}
+#registerButton:hover{
+  background-color: #8CCCC1;
+}
+
+#registerButton a{
+  color: #878787FF;
+  text-decoration: none;
+}
+
+#registerButton a:hover{
+  color: white;
+}
+
+#toProfilButton{
+  width: 100%;
+  border: none;
+  padding: 15px;
+  color: white;
+  background-color: #8CCCC1;
+}
+
+#toProfilButton a{
+  color: white;
+  text-decoration: none;
+}
+#toProductButton a{
+  color: white;
+  text-decoration: none;
+}
+
+#makeOfferButton{
+  width: 50%;
+  border: none;
+  padding: 15px;
+  color: black;
+  background-color: white;
+}
+
+#makeOfferButton a{
+  color: black;
+}
+
+#productSection{
+  width: 80%;
+  flex-wrap: wrap;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: end;
+}
+
+#createProductSection{
+  width: 70%;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+
+#productDetailsSection{
+  width: 60%;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+#productDetailsSection form{
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+}
+
+#productDetailsSection form input, select, textarea{
+  padding: 5px;
+}
+
+#productDetailsSection form input{
+  width: 90%;
+  margin: 10px;
+}
+#productDetailsSection form textarea{
+  width: 90%;
+  margin: 10px;
+}
+
+#productDetailsSection form select{
+  width: 90%;
+  margin: 10px;
+}
+
+#productDetailsSection button{
+  width: 35%;
+  margin: 10px;
+}
+
+#productImgSection{
+  width: 40%;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+
+
+#productImgSection img {
+  margin: 10px;
+}
+
+#imgList{
+  display: flex;
+  flex-direction: row;
+}
+
+#imgList ul{
+  width: 50%;
+  border: solid black 1px;
+  padding:0;
+  margin: 0;
+}
+
+#imgList li{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  list-style-type: none;
+}
+
+#imgList li img{
+  width: 30%;
+  list-style-type: none;
+}
+
+#imgList li button{
+  width: 20%;
+  border: none;
+  background-color: white;
+}
+
+#imgList a{
+  align-items: center;
+  color: black;
+  text-decoration: none;
+}
+
+#imgList li:hover{
+  list-style-type: none;
+  background-color: #8CCCC1;
+}
+
+#loginBox{
+  display: flex;
+  width: 40%;
+  flex-direction: column;
+  align-items: center;
+}
+
+#loginBox form{
+  width: 60%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+#loginBox form input{
+  margin: 10px;
+  width: 100%;
+  padding: 10px;
+}
+
+#loginBox form button{
+  width: 100%;
+}
+
+#product_landing_page_box{
+  width: 40%;
+  display: flex;
+  flex-direction: row;
+}
+h5{
+  font-family: Arial, serif;
+  font-size: 13px;
+  color: #82888C;
+}
+#product_landing_page_box h5{
+  font-family: Arial, serif;
+  font-size: 13px;
+  color: #82888C;
+}
+#productBox{
+  width: 30%;
+  margin: 20px;
+}
+#productBox img{
+  width: 100%;
+}
+#productImageLandingPage{
+  width: 80%;
+}
+
+#creatCustomerBox{
+  width: 25%;
+}
+#creatCustomerBox form{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+#creatCustomerBox form input{
+  width: 100%;
+  padding: 20px;
+  margin: 5px;
+}
+
+#creatCustomerBox form select{
+  width: 100%;
+  margin: 5px;
+}
+
+#creatCustomerBox form button{
+  margin: 5px;
+}
+
+#cartSection{
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+}
+#logoImg{
+  margin: 20px;
+  width: 15%;
+}
+@media only screen and (max-width: 900px){
+  #searchContainer{
+    width: 80%;
+  }
+  #productSection{
+    width: 90%;
+    flex-wrap: wrap;
+  }
+  #erstellAnzeigeButton{
+    display: none;
+  }
+  #menu{
+    width: 100%;
+  }
+  #header a{
+    width: 25%;
+  }
+  #header a img{
+    margin: 10px;
+    width: 100%;
+  }
+  #menuButton{
+    width: 25%;
+  }
+  #logoImg{
+    width: 30%;
+  }
+  #subsection{
+    width: 60%;
+  }
+  #creatCustomerBox{
+    width: 90%;
+  }
+  #createProductSection{
+    width: 90%;
+    flex-wrap: wrap;
+  }
+  #productDetailsSection{
+    width: 100%;
+  }
+  #toProductButton{
+    width: 100%;
+  }
+  #registerButton{
+    width: 100%;
+  }
+  #deleteButton2:hover{
+    background-color: #8f2626;
+  }
+  #toProfilButton:hover, #toProductButton:hover{
+    background-color: #418e86;
+  }
+  #product_landing_page_box{
+    width: 90%;
+    flex-wrap: wrap-reverse;
+  }
+  #product_section_box{
+    margin-top: 20px;
+  }
+  #deleteButton2{
+    width: 100%;
+  }
+  #basketSection{
+    width: 80%;
+  }
+  #warenkorbProducts{
+    margin-bottom: 25px;
+    width: 100%;
+  }
+  #productBox{
+    width: 90%;
+  }
+  #productBox img {
+    width: 100%;
+  }
+
+  #rechnungSection{
+    width: 90%;
+  }
+
+  h1{
+    width: 90%;
+  }
+
+  #billSection{
+    width: 100%;
+  }
+}
+
