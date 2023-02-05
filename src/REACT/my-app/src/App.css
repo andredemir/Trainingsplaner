@@ -512,7 +512,14 @@ h5{
   padding: 20px;
   box-shadow: #b8b8b8 10px 10px 30px 5px;
 }
-
+#uebung{
+  margin-bottom: 20px;
+}
+#stats{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
 .selected {
   background-color: #6a6a6a;
 }

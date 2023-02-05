@@ -43,10 +43,18 @@ function TrainingsplanComponentPOST() {
             <div id={"trainingsplan"}>
                 <h1>Trainingsplan</h1>
                 {trainingsplan.map(uebung => (
-                    <div key={uebung.uebungId}>
+                    <div key={uebung.uebungId} id={"uebung"}>
                         <h1>{uebung.name}</h1>
                         <h4>{uebung.category}</h4>
                         <h4>{uebung.bodypart}</h4>
+                        <div id={"stats"}>
+                            <label>Gewicht</label>
+                            <input/>
+                            <label>Sätze</label>
+                            <input/>
+                            <label>Wdh</label>
+                            <input/>
+                        </div>
                     </div>
                 ))}
             </div>
