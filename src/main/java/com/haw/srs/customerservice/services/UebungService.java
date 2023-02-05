@@ -25,14 +25,17 @@ public class UebungService {
     private UebungRepository uebungRepository;
 
     @Transactional
-    public Long createUebung(String name,String description, Category category, Bodypart bodypart) throws BillAlreadyExistingException, UebungAlreadyExistingException {
-        Uebung uebung = new Uebung(name, description, bodypart, category);
-        if (uebungRepository.findByUebungId(uebung.getId()).isPresent()) {
-            throw new UebungAlreadyExistingException(uebung.getId());
+    public Long createUebung(String name, Category category, Bodypart bodypart) throws  UebungAlreadyExistingException {
+        Uebung uebung = new Uebung(name, bodypart, category);
+        if (uebungRepository.findByUebungId(uebung.getUebungId()).isPresent()) {
+            throw new UebungAlreadyExistingException(uebung.getUebungId());
         }
         uebungRepository.save(uebung);
-        return uebung.getId();
+        return uebung.getUebungId();
     }
+
+
+
 
     public List<Uebung> findAllBill() {
         return uebungRepository.findAll();

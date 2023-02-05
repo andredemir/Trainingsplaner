@@ -2,21 +2,15 @@ package com.haw.srs.customerservice;
 
 import com.haw.srs.customerservice.datatypes.Address;
 import com.haw.srs.customerservice.datatypes.PhoneNumber;
-import com.haw.srs.customerservice.entities.Bill;
-import com.haw.srs.customerservice.entities.Customer;
-import com.haw.srs.customerservice.entities.Role;
+import com.haw.srs.customerservice.entities.*;
+import com.haw.srs.customerservice.enums.Bodypart;
+import com.haw.srs.customerservice.enums.Category;
 import com.haw.srs.customerservice.enums.Gender;
-import com.haw.srs.customerservice.entities.Product;
 import com.haw.srs.customerservice.enums.ProductCategory;
 import com.haw.srs.customerservice.exceptions.*;
-import com.haw.srs.customerservice.repositories.BillRepository;
-import com.haw.srs.customerservice.repositories.CustomerRepository;
-import com.haw.srs.customerservice.repositories.ProductRepository;
-import com.haw.srs.customerservice.repositories.RoleRepository;
-import com.haw.srs.customerservice.services.CreditCardPayment;
-import com.haw.srs.customerservice.services.CustomerService;
-import com.haw.srs.customerservice.services.OrderService;
-import com.haw.srs.customerservice.services.ProductService;
+import com.haw.srs.customerservice.repositories.*;
+import com.haw.srs.customerservice.services.*;
+import com.haw.srs.customerservice.wrapperklassen.TrainingsplanUebungWrapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -26,6 +20,7 @@ import org.springframework.stereotype.Component;
 import java.time.Instant;
 import java.util.Arrays;
 import java.util.Date;
+import java.util.Optional;
 
 @SpringBootApplication
 public class Application {
@@ -49,23 +44,39 @@ class PopulateTestDataRunner implements CommandLineRunner {
     @Autowired
     OrderService orderService;
     @Autowired
+    TrainingsplanService trainingsplanService;
+    @Autowired
     ProductService productService;
-
+    @Autowired
+    UebungRepository uebungRepository;
     @Autowired
     RoleRepository roleRepository;
+    @Autowired
+    UebungForTrainingsplanRepository uebungForTrainingsplanRepository;
+    @Autowired
+    UebungForTrainingsPlanService uebungForTrainingsPlanService;
+    @Autowired
+    TrainingsplanRepository trainingsplanRepository;
 
     @Autowired
-    public PopulateTestDataRunner(CustomerRepository customerRepository, BillRepository billRepository) {
+    UebungService uebungService;
+
+    @Autowired
+    public PopulateTestDataRunner(CustomerRepository customerRepository,UebungForTrainingsplanRepository uebungForTrainingsplanRepository, UebungForTrainingsPlanService uebungForTrainingsPlanService, BillRepository billRepository, UebungRepository uebungsRepository, TrainingsplanRepository trainingsplanRepository,  UebungService uebungService){
         this.customerRepository = customerRepository;
         this.billRepository = billRepository;
-        this.productRepository = productRepository;
-
+        this.trainingsplanService = new TrainingsplanService();
         this.customerService = new CustomerService();
         this.orderService = new OrderService();
+        this.uebungRepository = uebungsRepository;
+        this.trainingsplanRepository = trainingsplanRepository;
+        this.uebungService = uebungService;
+        this.uebungForTrainingsPlanService = uebungForTrainingsPlanService;
+        this.uebungForTrainingsplanRepository = uebungForTrainingsplanRepository;
     }
 
     @Override
-    public void run(String... args) throws CustomerAlreadyExistingException, ProductAlreadyInCartException, CustomerNotFoundException, ProductNotFoundException, EmptyCartException, OrderNotFoundException, BillAlreadyExistingException, ProductAlreadyExistingException {
+    public void run(String... args) throws CustomerAlreadyExistingException, TrainingsplanAlreadyExistingException, UebungAlreadyExistingException, TrainingsplanNotFoundException, UebungNotFoundException, UebungForTrainingsplanAlreadyExistingException {
         customerRepository.deleteAll();
         Arrays.asList(
                         "Miller,Doe,Smith".split(","))
@@ -90,6 +101,17 @@ class PopulateTestDataRunner implements CommandLineRunner {
         orderService.placeOrder(customerID, new Address("Haakestrasse", 23, "21056", "Hamburg"));*/
       //  Role admin = new Role();
       //  roleRepository.save(admin);
+        Long trainingsplan1 = trainingsplanService.createTrainingsplan("Trainingsplan 1");
+        Long trainingsplan2 = trainingsplanService.createTrainingsplan("Trainingsplan 2");
+        Long trainingsplan3 = trainingsplanService.createTrainingsplan("Trainingsplan 3");
+        Long uebung3 = uebungService.createUebung("Latzug", Category.MASCHINE, Bodypart.RUECKEN);
+        Long uebung4 = uebungService.createUebung("Beckenboden", Category.MASCHINE, Bodypart.BEINE);
+        Long uebung6 = uebungService.createUebung("Klimmzüge", Category.MASCHINE, Bodypart.RUECKEN);
+        Long uebung7 = uebungForTrainingsPlanService.createUebungForTrainingsPlan(uebung3, 12, 3, 2.00, 3);
+        Long uebung8 = uebungForTrainingsPlanService.createUebungForTrainingsPlan(uebung4, 12, 3, 2.00, 3);
+        trainingsplanService.addToTrainingsplan(trainingsplan1, uebung7);
+        trainingsplanService.addToTrainingsplan(trainingsplan1, uebung8);
+
     }
 
 }

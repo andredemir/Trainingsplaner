@@ -15,6 +15,7 @@ import EinstellungComponent from "./components/EinstellungComponent";
 import SellerProfilComponent from "./components/SellerProfilComponent";
 import RechnungsComponent from "./components/RechnungsComponent";
 import ProductComponentsUPDATE from "./components/ProductComponentsUPDATE";
+import StartseiteComponent from "./components/Startseite";
 
 function App() {
     return (
@@ -61,6 +62,9 @@ function App() {
                         </Route>
                         <Route exact path={"/updateproduct"}>
                             <ProductComponentsUPDATE/>
+                        </Route>
+                        <Route exact path={"/startseite"}>
+                            <StartseiteComponent/>
                         </Route>
                     </Switch>
                 </div>

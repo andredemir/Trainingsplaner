@@ -21,15 +21,13 @@ import java.util.List;
 public class Uebung {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    private Long uebungId;
     private String name;
-    private String description;
     private Bodypart bodypart;
     private Category category;
 
-    public Uebung(String name, String description, Bodypart bodypart, Category category) {
+    public Uebung(String name, Bodypart bodypart, Category category) {
         this.name = name;
-        this.description = description;
         this.bodypart = bodypart;
         this.category = category;
     }

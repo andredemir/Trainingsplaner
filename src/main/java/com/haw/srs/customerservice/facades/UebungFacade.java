@@ -73,8 +73,8 @@ public class UebungFacade {
     @PutMapping
     public Uebung updateUebung(@RequestBody Uebung uebung) throws UebungNotFoundException {
         Uebung uebungToUpdate = uebungRepository
-                .findById(uebung.getId())
-                .orElseThrow(() -> new UebungNotFoundException(uebung.getId()));
+                .findById(uebung.getUebungId())
+                .orElseThrow(() -> new UebungNotFoundException(uebung.getUebungId()));
         return uebungRepository.save(uebung);
     }
 }
