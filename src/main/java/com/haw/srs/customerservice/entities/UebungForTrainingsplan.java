@@ -24,8 +24,10 @@ public class UebungForTrainingsplan {
     private int sets;
     private double pause;
     private int gewicht;
+    private String name;
 
-    public UebungForTrainingsplan(long uebungId, int wdh, int sets, double pause, int gewicht) {
+    public UebungForTrainingsplan(String name, long uebungId, int wdh, int sets, double pause, int gewicht) {
+        this.name = name;
         this.uebungsId = uebungId;
         this.wdh = wdh;
         this.sets = sets;

@@ -258,8 +258,8 @@ nav{
   background-color: #8CCCC1;
 }
 #registerButton{
+
   width: 50%;
-  border: none;
   padding: 15px;
   color: white;
   background-color: #ffffff;
@@ -495,7 +495,71 @@ h5{
   margin: 20px;
   width: 15%;
 }
+#uebungsBox{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.box {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  margin-bottom: 40px;
+  color: black;
+  border-radius: 10px;
+  width: 80%;
+  padding: 20px;
+  box-shadow: #b8b8b8 10px 10px 30px 5px;
+}
+
+.selected {
+  background-color: #6a6a6a;
+}
+.hide{
+  display: none;
+}
+
 @media only screen and (max-width: 900px){
+  #trainingsplans_Section{
+    font-family: Arial, serif;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  #trainingsplan_section{
+    display: flex;
+    margin-bottom: 40px;
+    justify-content: flex-start;
+    color: black;
+    border-radius: 10px;
+    width: 90%;
+    padding: 20px;
+    box-shadow: #b8b8b8 10px 10px 30px 5px;
+  }
+  #trainingsplan_section h1{
+    width: 100%;
+  }
+  hr{
+    width: 100%;
+  }
+  #createPlan_Btn{
+    width: 90%;
+    border: none;
+    padding: 15px;
+    color: white;
+    background-color: #8CCCC1;
+    box-shadow: #b8b8b8 10px 10px 30px 5px;
+    margin-bottom: 40px;
+    border-radius: 10px;
+  }
+
+  #createPlan_Btn a{
+    color: white;
+    text-decoration: none;
+  }
+
   #searchContainer{
     width: 80%;
   }
@@ -535,7 +599,7 @@ h5{
   #productDetailsSection{
     width: 100%;
   }
-  #toProductButton{
+  #toProductButton {
     width: 100%;
   }
   #registerButton{
@@ -544,7 +608,7 @@ h5{
   #deleteButton2:hover{
     background-color: #8f2626;
   }
-  #toProfilButton:hover, #toProductButton:hover{
+  #toProfilButton:hover, #toProductButton:hover, #createPlan_Btn:hover{
     background-color: #418e86;
   }
   #product_landing_page_box{

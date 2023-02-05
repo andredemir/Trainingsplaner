@@ -16,6 +16,7 @@ import SellerProfilComponent from "./components/SellerProfilComponent";
 import RechnungsComponent from "./components/RechnungsComponent";
 import ProductComponentsUPDATE from "./components/ProductComponentsUPDATE";
 import StartseiteComponent from "./components/Startseite";
+import TrainingsplanComponentPOST from "./components/TrainingsplanComponentPOST";
 
 function App() {
     return (
@@ -65,6 +66,9 @@ function App() {
                         </Route>
                         <Route exact path={"/startseite"}>
                             <StartseiteComponent/>
+                        </Route>
+                        <Route exact path={"/createTrainingsplan"}>
+                            <TrainingsplanComponentPOST/>
                         </Route>
                     </Switch>
                 </div>

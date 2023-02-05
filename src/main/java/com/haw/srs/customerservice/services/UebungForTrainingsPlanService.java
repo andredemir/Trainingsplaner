@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.Optional;
 
 /**
  * A service class of methods for Bills
@@ -20,10 +21,13 @@ import java.util.List;
 public class UebungForTrainingsPlanService {
     @Autowired
     private UebungForTrainingsplanRepository uebungForTrainingsplanRepository;
+    @Autowired
+    UebungRepository uebungRepository;
 
     @Transactional
     public Long createUebungForTrainingsPlan(long uebungId, int wdh, int sets, double pause, int gewicht) throws  UebungAlreadyExistingException {
-        UebungForTrainingsplan uebungForTrainingsplan = new UebungForTrainingsplan(uebungId, wdh, sets, pause, gewicht);
+        Uebung uebung = uebungRepository.findByUebungId(uebungId).orElseThrow(() -> new UebungAlreadyExistingException(uebungId));
+        UebungForTrainingsplan uebungForTrainingsplan = new UebungForTrainingsplan(uebung.getName(), uebungId, wdh, sets, pause, gewicht);
         if (uebungForTrainingsplanRepository.findByUebungForTrainingsPlanId(uebungForTrainingsplan.getUebungForTrainingsPlanId()).isPresent()) {
             throw new UebungAlreadyExistingException(uebungId);
         }

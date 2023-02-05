@@ -103,15 +103,23 @@ class PopulateTestDataRunner implements CommandLineRunner {
       //  roleRepository.save(admin);
         Long trainingsplan1 = trainingsplanService.createTrainingsplan("Trainingsplan 1");
         Long trainingsplan2 = trainingsplanService.createTrainingsplan("Trainingsplan 2");
-        Long trainingsplan3 = trainingsplanService.createTrainingsplan("Trainingsplan 3");
-        Long uebung3 = uebungService.createUebung("Latzug", Category.MASCHINE, Bodypart.RUECKEN);
-        Long uebung4 = uebungService.createUebung("Beckenboden", Category.MASCHINE, Bodypart.BEINE);
-        Long uebung6 = uebungService.createUebung("Klimmzüge", Category.MASCHINE, Bodypart.RUECKEN);
-        Long uebung7 = uebungForTrainingsPlanService.createUebungForTrainingsPlan(uebung3, 12, 3, 2.00, 3);
-        Long uebung8 = uebungForTrainingsPlanService.createUebungForTrainingsPlan(uebung4, 12, 3, 2.00, 3);
-        trainingsplanService.addToTrainingsplan(trainingsplan1, uebung7);
-        trainingsplanService.addToTrainingsplan(trainingsplan1, uebung8);
 
+        Long uebung3 = uebungService.createUebung("Latzug", Category.MASCHINE, Bodypart.RUECKEN);
+        Long uebung4 = uebungService.createUebung("Penetrator", Category.MASCHINE, Bodypart.BEINE);
+        Long uebung6 = uebungService.createUebung("Klimmzüge", Category.MASCHINE, Bodypart.RUECKEN);
+        Long uebung9 = uebungService.createUebung("Arsch", Category.MASCHINE, Bodypart.BEINE);
+        Long uebung10 = uebungService.createUebung("PoLoch", Category.MASCHINE, Bodypart.BEINE);
+
+        Long uebungForTrainingsPlan1 = uebungForTrainingsPlanService.createUebungForTrainingsPlan(uebung10, 12, 3, 2.00, 69);
+        Long uebungForTrainingsPlan2 = uebungForTrainingsPlanService.createUebungForTrainingsPlan(uebung9, 12, 3, 2.00, 300);
+        Long uebungForTrainingsPlan3 = uebungForTrainingsPlanService.createUebungForTrainingsPlan(uebung6, 12, 3, 2.00, 420);
+        Long uebungForTrainingsPlan4 = uebungForTrainingsPlanService.createUebungForTrainingsPlan(uebung4, 12, 3, 2.00, 33);
+
+        trainingsplanService.addToTrainingsplan(trainingsplan1, uebungForTrainingsPlan1);
+        trainingsplanService.addToTrainingsplan(trainingsplan1, uebungForTrainingsPlan2);
+        trainingsplanService.addToTrainingsplan(trainingsplan1, uebungForTrainingsPlan3);
+
+        trainingsplanService.addToTrainingsplan(trainingsplan2, uebungForTrainingsPlan4);
     }
 
 }
