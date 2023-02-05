@@ -59,6 +59,7 @@ function TrainingsplanComponentPOST() {
                 ))}
             </div>
             <button id={"createPlan_Btn"} onClick={toggleClass}>Übung hinzufügen</button>
+            <button id={"createPlanFinal_Btn"} >Trainingsplan speichern</button>
             <div id={"uebungsBox"}>
                 {!loading && uebungen.map(uebung => (
                     <div

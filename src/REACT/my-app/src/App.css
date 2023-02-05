@@ -508,7 +508,7 @@ h5{
   margin-bottom: 40px;
   color: black;
   border-radius: 10px;
-  width: 80%;
+  width: 100%;
   padding: 20px;
   box-shadow: #b8b8b8 10px 10px 30px 5px;
 }
@@ -530,7 +530,7 @@ h5{
 @media only screen and (max-width: 900px){
   #trainingsplans_Section{
     font-family: Arial, serif;
-    width: 100%;
+    width: 90%;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -552,11 +552,22 @@ h5{
     width: 100%;
   }
   #createPlan_Btn{
-    width: 90%;
+    width: 100%;
     border: none;
     padding: 15px;
     color: white;
     background-color: #8CCCC1;
+    box-shadow: #b8b8b8 10px 10px 30px 5px;
+    margin-bottom: 40px;
+    border-radius: 10px;
+  }
+
+  #createPlanFinal_Btn{
+    width: 100%;
+    border: none;
+    padding: 15px;
+    color: white;
+    background-color: #cc8c91;
     box-shadow: #b8b8b8 10px 10px 30px 5px;
     margin-bottom: 40px;
     border-radius: 10px;
